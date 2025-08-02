@@ -1,0 +1,203 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color:white;
+    background-color:black;
+
+}
+@font-face{
+    font-family: Facon;
+    src: url('Facon.ttf') format('truetype');
+}
+@font-face {
+    font-family: Bomber;
+    src: url('Fragile Bombers.otf') format('opentype');
+}
+.background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    background-size: cover;
+    filter: blur(5px);
+    transition: opacity 1s ease-in-out;
+}
+
+.container {
+    width: 100%;
+}
+
+
+
+.navbar {
+    font-size:larger;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid white;
+    padding: 10px;
+    top: 0;
+    position:relative;
+}
+
+    .navbar .logo, .navbar .nav-links a {
+        font-family: Bomber;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        font-size:30px;
+    }
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+.navbar .menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.title {
+    
+    text-align: center;
+    font-size:40px;
+    padding: 10px;
+    margin-top:15px;
+    font-family: 'Facon';
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    margin-top: 20px;
+}
+.content-grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    margin-top: 20px;
+    box-shadow: 1px 1px 1px white;
+    align-content:center;
+    align-items:center;
+}
+    .content-grid2 div {
+        display: inline-block;
+        color: snow;
+        align-items: center;
+        text-align: center;
+        font-size:25px;
+        width:100%;
+    }
+    .content-grid2 p{
+        padding:10px;
+        font-family:Bomber;
+    }
+    .content-grid2 a {
+        display:block;
+        font-family: Bomber;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        padding: 20px;
+    }
+    .content-grid2 img{
+        margin:20px;
+        width:80%;
+    }
+.content-box {
+    position:relative;
+    height: 200px; 
+    box-shadow: 1px 1px 1px white;
+    overflow:hidden;
+}
+
+.dark {
+    border-right: 5px black;
+    border-bottom: 5px black;
+    box-shadow: 5px 5px 5px black;
+}
+.content-box img {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    cursor:pointer;
+    transition: transform 1s ease;
+}
+.content-box div {
+    border-left: 5px groove dimgrey ;
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    right: 0;
+    top: 0;
+    color: snow;
+    
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    overflow-y:auto;
+}
+.content-box p{
+    padding:5px;
+    font-family:Bomber;
+}
+.content-box.show img{
+   transform:translateX(-60%);
+}
+.content-box.show div {
+    transform: translateX(0);
+}
+@media only screen and (max-width:772px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left:0;
+        z-index: 5;
+        background-color: black;
+        border:solid 1px snow;
+        
+    }
+
+        .nav-links a {
+            text-align: right;
+            padding: 15px 20px;
+            border-bottom: 1px solid white;
+        }
+
+    .navbar .menu-icon {
+        display: inline-block;
+    }
+
+    .nav-links.show {
+       
+        display: flex;
+        width:100%;
+        flex-direction: column;
+        align-content:center;
+    }
+    .content-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .content-grid2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
