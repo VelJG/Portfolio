@@ -173,7 +173,7 @@ section {
     .project-card h3 {
         font-size: 22px;
         margin-bottom: 10px;
-        color: #bb86fc;
+        color: whitesmoke;
     }
 
 .project-links {
@@ -241,8 +241,6 @@ section {
     gap: 30px;
     margin-top: 20px;
 }
-
-/* --- REPLACE with this block --- */
 
 .skill-item {
     background-color: #1e1e1e;
